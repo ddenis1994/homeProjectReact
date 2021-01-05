@@ -5,12 +5,15 @@ import "jquery/dist/jquery";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import App from './components/App';
+import store from "../src/store"
+import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
+    <Provider store={store()}>
     <App />
-  </React.StrictMode>,
+    </Provider>
+  ,
   document.getElementById('root')
 );
 

@@ -10,3 +10,24 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.mainPage{
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  z-index: 12;
+  bottom: 0;
+  position: fixed;
+}
+
+.bottomNev{
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  z-index: 12;
+  background-color: rgba(76, 88, 105);
+  position: fixed;
+  bottom: 0;
+}
+
+

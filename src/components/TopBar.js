@@ -6,7 +6,6 @@ import { VscAccount} from  "react-icons/vsc";
 
 
 export default function TopBar({user}){
-  console.log(user);
     return (
         <Navbar bg="light" expand="lg">
           <Navbar.Brand href="">
@@ -24,8 +23,10 @@ export default function TopBar({user}){
           </Navbar.Brand>
           <Button variant="link">Dowenload chrome extention</Button>
           <Navbar.Brand className="justify-content-center"> 
+          <div>
             <VscAccount/>
              {user}
+             </div>
           </Navbar.Brand>
         </Navbar.Collapse>
       </Navbar>
