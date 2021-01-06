@@ -84,6 +84,7 @@ export const folderR=(state={
     switch (type){
         case SELECT_FOLDER:{
             const { folder }=payload;
+
             let folderToReturn;
             foldersList.forEach(item=>{
                 if (item.folderName===folder) {

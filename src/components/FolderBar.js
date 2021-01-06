@@ -9,6 +9,7 @@ import { selectFolder } from "../actions/FolderBarActions";
 
 const SideBar=({folders=[],onFolderSelectPressed})=>{
 
+    
 const listOfFolders=folders.map((folder,i)=>(
     <li key={i}>
     <Nav.Link >
