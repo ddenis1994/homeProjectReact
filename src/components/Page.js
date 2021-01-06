@@ -10,7 +10,7 @@ const Page= function Page({projects=[],folderUse}){
 
     const projects2=projects.map((item,i)=>(
         <>
-        <Col >
+        <Col className="p-5">
         <Project project={item } keyValue={i}/>
          </Col>
         </>
@@ -22,9 +22,11 @@ const Page= function Page({projects=[],folderUse}){
       <>
       <PageNavigation folderName={folderUse} size={projects.length} />
       <br/>
-        <Row  md={3}>
+      <Container>
+        <Row  md={5} >
       {projects2}
       </Row>
+      </Container>
 
       
       

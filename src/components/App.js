@@ -29,32 +29,24 @@ function App({onUpdateFolders}) {
 
 
   return (
-      <Container fluid>
-        <Row>
-          <Col>
-          <TopBar user={user.username}/>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="auto">
-          <Row>
-          <FolderBar/>
-          </Row>
-          <Row>
-          <TeamBar members={teamMemners.companyMembers}/>
-          </Row>
+    <>
+      <TopBar user={user.username} />
+      <Container fluid >
+        <Row >
+          <Col md={3} xl={2} xs={12}>
+            <FolderBar />
+            <TeamBar members={teamMemners.companyMembers} />
           </Col>
           <Col>
-          <Row>
-          <Page/>
-          </Row>
+            <Row>
+              <Page />
+            </Row>
           </Col>
         </Row>
-        <Row className="bottomNev">
-        <ButtomManu />
-        </Row>
-
       </Container>
+      <ButtomManu />
+
+    </>
 
   ); 
 }
@@ -64,3 +56,5 @@ const mapDispachToProps = dispach =>({
 });
  
 export default connect(null,mapDispachToProps)(App);
+
+

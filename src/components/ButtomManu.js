@@ -1,11 +1,11 @@
 
-import { Nav ,NavDropdown } from "react-bootstrap";
+import { Navbar ,NavDropdown } from "react-bootstrap";
 import '../css/ButtomMenu.css';
 
 
 export default function ButtomManu(){
     return (
-        <Nav  activeKey="1" >
+        <Navbar  activeKey="1" expand="lg" fixed="bottom" >
           <div >
           <NavDropdown title={<span className="text-primary my-auto">OnBoarding 1</span>} id="nav-dropdown" >
             <li>
@@ -19,6 +19,6 @@ export default function ButtomManu(){
             </li>
           </NavDropdown>
           </div>
-        </Nav>
+        </Navbar>
   );
 };

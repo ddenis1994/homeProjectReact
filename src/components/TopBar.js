@@ -7,7 +7,7 @@ import { VscAccount} from  "react-icons/vsc";
 
 export default function TopBar({user}){
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" sticky="top">
           <Navbar.Brand href="">
               <ImHome/>
           </Navbar.Brand>
