@@ -7,7 +7,7 @@ import FolderBar from "./FolderBar";
 import {useEffect} from 'react';
 import { updateFolders } from "../actions/FolderBarActions";
 import { connect } from "react-redux";
-import { Row ,Col } from "react-bootstrap";
+import { Row ,Col, Container } from "react-bootstrap";
 
 //http://localhost:4000/folder
 
@@ -29,36 +29,32 @@ function App({onUpdateFolders}) {
 
 
   return (
-
-<div className="container vh-100 align-items-center col justify-content-center" >
-  <div className="row border  ">
-    <div className="container-fluid ">
-    <TopBar user={user.username}/>
-    </div>
-  </div>
-
-  <div className="row  maxSize">
-      <div className="col-md-3 border ">
-        <div className="row container-fluid ">
+      <Container fluid>
+        <Row>
+          <Col>
+          <TopBar user={user.username}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col md="auto">
+          <Row>
           <FolderBar/>
-          <br/>
-        </div>
-        <div className="row container-fluid ">
+          </Row>
+          <Row>
           <TeamBar members={teamMemners.companyMembers}/>
-        </div>
-      </div>
-      <div className="col border container-fluid ">
-      <div className="row container-fluid ">
-        <Page/>
-        </div>
-      </div>
-    </div>
-  <div className="row border bottomNev">
-      <ButtomManu />
-      </div>
+          </Row>
+          </Col>
+          <Col>
+          <Row>
+          <Page/>
+          </Row>
+          </Col>
+        </Row>
+        <Row className="bottomNev">
+        <ButtomManu />
+        </Row>
 
-</div>
-
+      </Container>
 
   ); 
 }
@@ -66,10 +62,5 @@ function App({onUpdateFolders}) {
 const mapDispachToProps = dispach =>({
   onUpdateFolders: folders =>dispach(updateFolders(folders)),
 });
-
+ 
 export default connect(null,mapDispachToProps)(App);
-
-
-
-
-
