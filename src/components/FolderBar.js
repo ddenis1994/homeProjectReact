@@ -54,7 +54,9 @@ return(
 );
 }
 
-
+const mapStateToProps = state => ({
+    folders: state.folderR.folders,
+});
 
 
   const mapDispachToProps = dispach =>({
@@ -62,4 +64,4 @@ return(
   });
   
 
-export default connect(null,mapDispachToProps)(SideBar);
+export default connect(mapStateToProps,mapDispachToProps)(SideBar);

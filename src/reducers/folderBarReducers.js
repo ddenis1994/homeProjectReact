@@ -1,4 +1,4 @@
-import { SELECT_FOLDER,DELETE_FOLDER,UPDATE_FOLDER } from "../actions/FolderBarActions";
+import { SELECT_FOLDER,DELETE_FOLDER,UPDATE_FOLDER,UPDATE_FOLDERS } from "../actions/FolderBarActions";
 
 
 
@@ -75,7 +75,8 @@ import { SELECT_FOLDER,DELETE_FOLDER,UPDATE_FOLDER } from "../actions/FolderBarA
 
 export const folderR=(state={ 
     projects: [],
-    folderUse:"" 
+    folderUse:"" ,
+    folders:[],
 }
     ,action) =>{
     
@@ -91,6 +92,7 @@ export const folderR=(state={
             })
             ;
             return {
+                folders:state.folders,
                 folderUse:folder,
                 projects : folderToReturn.projects};
         }
@@ -102,6 +104,15 @@ export const folderR=(state={
             //FOR LATER
             return state
         }
+        case UPDATE_FOLDERS:{
+          
+          const { folders }=payload;
+          console.log(folders);
+          return {
+            folders:folders,
+          };
+      }
+
         default:
             return state
     }

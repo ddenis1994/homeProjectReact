@@ -4,8 +4,12 @@ import  TopBar from "./TopBar";
 import TeamBar from "./TeamBar"
 import ButtomManu from "./ButtomManu"
 import FolderBar from "./FolderBar";
+import {useEffect} from 'react';
+import { updateFolders } from "../actions/FolderBarActions";
+import { connect } from "react-redux";
+import { Row ,Col } from "react-bootstrap";
 
-
+//http://localhost:4000/folder
 
 const user={
   username:"user123",
@@ -15,8 +19,13 @@ const teamMemners={
   companyMembers:["Audrey smith","Daisy Nail"]
 }
 
-function App() {
+function App({onUpdateFolders}) {
 
+  useEffect(()=>{
+    fetch('http://localhost:4000/folder')
+    .then((response)=>response.json())
+    .then((response)=>onUpdateFolders(response))
+  })
 
 
   return (
@@ -28,24 +37,22 @@ function App() {
     </div>
   </div>
 
-  <div className="row  ">
+  <div className="row  maxSize">
       <div className="col-md-3 border ">
         <div className="row container-fluid ">
-          <FolderBar folders={user.userFolders}/>
+          <FolderBar/>
           <br/>
         </div>
         <div className="row container-fluid ">
           <TeamBar members={teamMemners.companyMembers}/>
         </div>
       </div>
-      <div className="col border container-fluid">
-      <div className="row container-fluid">
+      <div className="col border container-fluid ">
+      <div className="row container-fluid ">
         <Page/>
         </div>
       </div>
     </div>
-    
-
   <div className="row border bottomNev">
       <ButtomManu />
       </div>
@@ -56,7 +63,11 @@ function App() {
   ); 
 }
 
-export default App;
+const mapDispachToProps = dispach =>({
+  onUpdateFolders: folders =>dispach(updateFolders(folders)),
+});
+
+export default connect(null,mapDispachToProps)(App);
 
 
 

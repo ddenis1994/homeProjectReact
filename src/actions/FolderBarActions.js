@@ -19,3 +19,11 @@ export const updateFolder= folder =>({
     type:UPDATE_FOLDER,
     payload:{folder},
 });
+
+export const UPDATE_FOLDERS='UPDATE_FOLDERS';
+
+
+export const updateFolders= folders =>({
+    type:UPDATE_FOLDERS,
+    payload:{folders},
+});

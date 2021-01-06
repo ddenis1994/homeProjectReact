@@ -1,5 +1,7 @@
 import Project from "./project";
 import { connect } from 'react-redux';
+import  "../css/Page.css";
+import { Row ,Col } from "react-bootstrap";
 
 import  PageNavigation  from "./PageNavigation.js";
 
@@ -8,14 +10,11 @@ const Page= function Page({projects=[],folderUse}){
 
     const projects2=projects.map((item,i)=>(
         <>
-        {i%3===0 ? <div className="row"><div className="col"><li key={i}>
+        <Col>
+         <li key={i}>
         <Project project={item}/>
-        </li></div></div> : 
-         <div className="col">
-           <li key={i}>
-         <Project project={item}/>
-         </li></div>}
-        
+         </li>
+         </Col>
         </>
                 
 
@@ -25,7 +24,11 @@ const Page= function Page({projects=[],folderUse}){
       <>
       <PageNavigation folderName={folderUse} size={projects.length} />
       <br/>
+      <ul className="projectList display:flex ">
+        <Row  md={3}>
       {projects2}
+      </Row>
+      </ul>
       
       
       </>
